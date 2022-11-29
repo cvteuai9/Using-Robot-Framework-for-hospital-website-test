@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.8 on win32)" generated="20221129 06:01:09.050" rpa="false" schemaversion="3">
+<suite id="s1" name="RF test" source="C:\Users\TracK\Desktop\robotframework_test\RF_test.robot">
+<kw name="Open Browser" library="Selenium2Library" type="SETUP">
+<arg>https://webreg.tpech.gov.tw/RegOnline1_1.aspx?ZCode=F</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221129 06:01:09.374" level="INFO">Opening browser 'chrome' to base url 'https://webreg.tpech.gov.tw/RegOnline1_1.aspx?ZCode=F'.</msg>
+<status status="PASS" starttime="20221129 06:01:09.374" endtime="20221129 06:01:13.510"/>
+</kw>
+<test id="s1-t1" name="Alert Text Test" line="23">
+<kw name="Verify Alert Text">
+<arg>${alertText}</arg>
+<doc>Verify alert text is correct or not</doc>
+<kw name="Alert Should Be Present" library="Selenium2Library">
+<arg>${alertText}</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<msg timestamp="20221129 06:01:13.514" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<status status="PASS" starttime="20221129 06:01:13.513" endtime="20221129 06:01:13.520"/>
+</kw>
+<status status="PASS" starttime="20221129 06:01:13.511" endtime="20221129 06:01:13.520"/>
+</kw>
+<status status="PASS" starttime="20221129 06:01:13.510" endtime="20221129 06:01:13.525"/>
+</test>
+<test id="s1-t2" name="directionsText Text Test" line="27">
+<kw name="Directions Text Template">
+<arg>${directionsText}</arg>
+<doc>Front page message</doc>
+<kw name="Verify Message">
+<arg>${directionsText}</arg>
+<doc>Find message</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//*[@id="Label1"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221129 06:01:13.529" endtime="20221129 06:01:13.808"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${getText}</var>
+<arg>//*[@id="Label1"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221129 06:01:13.827" level="INFO">${getText} = 1. 確診代領藥防疫門診請親友攜帶確診病人健保卡，掛家庭醫學科、胸腔內科、感染科看診開藥。
+2. 民眾14天內有國外旅遊史，並出現發燒、咳嗽、嘔吐、腹瀉等症狀，請立即配戴外科口罩，至本院急診室就診，
+並主動告知醫護人員旅遊史、職業史、接觸史、群聚史，以便儘速為您診療。
+3. 腫瘤醫學整合門診於南楝二樓門診看診：
+星期二上午-呂志得醫師、陳朝宗醫師；星期三下午-鄭企峰醫師、陳安履醫師；星期五上午-周...</msg>
+<status status="PASS" starttime="20221129 06:01:13.808" endtime="20221129 06:01:13.827"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${getText}</arg>
+<arg>${directionsText}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20221129 06:01:13.827" endtime="20221129 06:01:13.827"/>
+</kw>
+<status status="PASS" starttime="20221129 06:01:13.529" endtime="20221129 06:01:13.827"/>
+</kw>
+<status status="PASS" starttime="20221129 06:01:13.528" endtime="20221129 06:01:13.828"/>
+</kw>
+<status status="PASS" starttime="20221129 06:01:13.527" endtime="20221129 06:01:13.828"/>
+</test>
+<test id="s1-t3" name="Doctor Name Test" line="31">
+<kw name="Search Doctor Name Template">
+<arg>${doctorName}</arg>
+<doc>Template for Search doctor name need give name variable</doc>
+<kw name="Click Division Button">
+<doc>Choose Division</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//*[@id="DL3_ctl11_HyperLink2"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221129 06:01:13.831" endtime="20221129 06:01:13.858"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>//*[@id="DL3_ctl11_HyperLink2"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221129 06:01:13.859" level="INFO">Clicking element '//*[@id="DL3_ctl11_HyperLink2"]'.</msg>
+<status status="PASS" starttime="20221129 06:01:13.858" endtime="20221129 06:01:15.208"/>
+</kw>
+<status status="PASS" starttime="20221129 06:01:13.831" endtime="20221129 06:01:15.208"/>
+</kw>
+<kw name="Click Doctor Information Page">
+<doc>Click doctor information page button</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//*[@id="Table1"]/tbody/tr[1]/td/table/tbody/tr/td/div/div/font[1]/table[1]/tbody/tr[2]/td[2]/div/a[4]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221129 06:01:15.209" endtime="20221129 06:01:15.236"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>//*[@id="Table1"]/tbody/tr[1]/td/table/tbody/tr/td/div/div/font[1]/table[1]/tbody/tr[2]/td[2]/div/a[4]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221129 06:01:15.236" level="INFO">Clicking element '//*[@id="Table1"]/tbody/tr[1]/td/table/tbody/tr/td/div/div/font[1]/table[1]/tbody/tr[2]/td[2]/div/a[4]'.</msg>
+<status status="PASS" starttime="20221129 06:01:15.236" endtime="20221129 06:01:15.883"/>
+</kw>
+<status status="PASS" starttime="20221129 06:01:15.209" endtime="20221129 06:01:15.883"/>
+</kw>
+<kw name="Verify Doctor Name">
+<arg>${name}</arg>
+<doc>Verify doctor's name</doc>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>//*[@id="DrLab"]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20221129 06:01:15.884" endtime="20221129 06:01:15.895"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${getText}</var>
+<arg>//*[@id="DrLab"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221129 06:01:15.913" level="INFO">${getText} = 陳慧嫻</msg>
+<status status="PASS" starttime="20221129 06:01:15.895" endtime="20221129 06:01:15.913"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${getText}</arg>
+<arg>${name}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20221129 06:01:15.913" endtime="20221129 06:01:15.913"/>
+</kw>
+<status status="PASS" starttime="20221129 06:01:15.883" endtime="20221129 06:01:15.913"/>
+</kw>
+<status status="PASS" starttime="20221129 06:01:13.830" endtime="20221129 06:01:15.914"/>
+</kw>
+<status status="PASS" starttime="20221129 06:01:13.830" endtime="20221129 06:01:15.915"/>
+</test>
+<kw name="Close Browser" library="Selenium2Library" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221129 06:01:15.917" endtime="20221129 06:01:18.070"/>
+</kw>
+<doc>Robot Framework Example</doc>
+<status status="PASS" starttime="20221129 06:01:09.052" endtime="20221129 06:01:18.070"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="RF test">RF test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
