@@ -1,7 +1,6 @@
 # Using-Robot-Framework-for-hospital-website-test
 # 使用Robot Framework框架以及Selenium2Library來爬取資料
-#
-# 因為這次使用的網站沒有做前後端分離，所以只有測試前端
+## (本次測試網站無前後端分離，故只有測試前端)
 #
 #
 ## 測項:
